@@ -1,0 +1,95 @@
+{% load static %}
+{% load settings_value %}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    
+    <title>Duly Invoice</title>
+    <!-- Custom CSS -->
+    <link href="{% static "vendor/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendor/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendor/css/bootstrap-datetimepicker.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendor/css/style.css" %}" rel="stylesheet">
+    <link href="{% static "vendor/css/media.css" %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+
+{% block style %}
+
+{% endblock %}    
+</head>
+
+<body>
+    <section class="wrapper boxs">
+   <div class="navbar-header header">
+      <h2><a href="index.html">Duely</a></h2>
+      <button class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation">
+      <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+      </span>
+      </button>
+   </div>
+   <div class="two_boxs boxs">
+      <div class="row">
+      <div class="col-sm-2 noleft forsidenavwidth">
+         <div class="sidenav sidenavD" id="mySidenav">
+            <div class="duely duely_br_radius icon_side boxs">
+               <h2 class="duely_h2"><a href="{% url 'home' %}">Duely</a></h2>
+               <img src="{% static "vendor/img/bit_img.svg" %}" alt="bit_img" class="bit_img img-responsive center-block">
+               <h4>{{request.user.username}}</h4>
+               
+               <a href="{% url 'logout' %}" class="sign_out_finalbtn">
+               <img src=" {% static "vendor/img/logout_final.svg"%}" alt="logout_final">
+               </a>
+               <p class="border_bottom_class boxs"></p>
+               <div class="dropdown">
+                  <button onclick="myFunction()" class="dropbtn">+ Create</button>
+                  <div id="myDropdown" class="dropdown-content">
+                     <a href="#home">Invoice</a>
+                     <!-- <a href="#about">Scheduled</a> -->
+                     <a href="#contact">Customer</a>
+                  </div>
+                  <div class="rect"></div>
+               </div>
+               <nav class="main-menu boxs">
+                  <ul class="main-menu-list">
+                     <li id="dashboard"><a href="{% url 'home' %}" ><img src=" {% static 'vendor/img/dashboard-level.svg' %}" alt="dashboard-level" class="h_none"><img src=" {% static 'vendor/img/dashboard-level-c.svg'%}" alt="dashboard-level" class="h_show">Dashboard</a></li>
+                     <li id="invoice" ><a href="{% url 'logout' %}"><img src=" {% static 'vendor/img/single-folded-content.svg'%}" alt="dashboard-level" class="h_none"><img src="{% static 'vendor/img/single-folded-content-c.svg'%}" alt="dashboard-level" class="h_show">Invoices</a></li>
+                     <li id="customer" ><a href="{% url 'customer_list' %}"><img src=" {% static 'vendor/img/wallet-43.svg'%}" alt="dashboard-level" class="h_none"><img src=" {% static 'vendor/img/wallet-43-c.svg'%}" alt="dashboard-level" class="h_show">Customers</a></li>
+                     <li id="notification" ><a href="{% url 'profile' %}"><img src=" {% static 'vendor/img/bell-53.svg'%}" alt="dashboard-level" class="h_none"><img src=" {% static 'vendor/img/bell-53-c.svg'%}" alt="dashboard-level" class="h_show">Notification</a></li>
+                     <li id="settings" ><a href="{% url 'profile' %}"><img src=" {% static 'vendor/img/settings-gear-63.svg'%}" alt="dashboard-level" class="h_none"><img src=" {% static 'vendor/img/settings-gear-63-c.svg'%}" alt="dashboard-level" class="h_show">Settings</a></li>
+                  </ul>
+               </nav>
+            </div>
+         </div>
+      </div>
+      {% block content %}
+
+
+      {% endblock %} 
+      </div>
+   </div>
+</section>
+    
+    
+           
+      
+   <script src="{% static "vendor/js/jquery.js" %}"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="{% static "vendor/js/bootstrap.min.js" %}"></script>
+   <script src="{% static "vendor/js/validate.js" %}"></script>
+   <script src="{% static "vendor/js/moment.js" %}"></script>
+   <script src="{% static "vendor/js/bootstrap-datetimepicker.min.js" %}"></script>
+   <script src="{% static "vendor/js/custom.js" %}"></script>
+   <script src="{% static "vendor/bootstrap-wysiwyg/bootstrap-wysiwyg.min.js" %}"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+   
+
+            
+{% block script %}
+    
+{% endblock %}
+</body>
+
+</html>

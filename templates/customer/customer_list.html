@@ -1,0 +1,118 @@
+{% extends "full_sidebar.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block style%}
+<style>
+    
+</style>
+{% endblock%}
+{% block content %}
+
+<div class="col-sm-10 noright col_width invoice_1_new_pad InvoiceLatest clientsD">
+                    <div class="overflow_hidden_invoice boxs">
+                        <div class="overflow_hidden_invoice2 overflow_hidden_invoice2D boxs">
+                            <div class="div_flex_invoice1 boxs">
+                                <div class="col-sm-3 col-xs-3 noleft">
+                                    <div class="invoices_copy_1_link boxs mgtn" id="mydivvvv">
+                                        <a class="invoice_sheduled ">Customers</a>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-5 col-xs-5 noleft">
+                                    <form class="search_input_invoice1">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Search">
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div class="col-sm-4 col-xs-4 noright noleft">
+                                    <div class="boxs last_link_invoice1">
+
+
+                                        <a href="{% url 'customer_create' %}" class="create_invoice_hover addteambtn">
+                                            + Add New Customer
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hide_invoicees1 boxs forclientwidth" id="hide_invoicees1">
+                                <div class="invoice1_section2_p boxs">
+                                    <ul class="main_head_top">
+                                        <li class="nameClient">
+                                            <p>Name</p>
+                                        </li>
+                                        <li>
+                                            <p>Email</p>
+                                        </li>
+                                        <li>
+                                            <p>Country</p>
+                                        </li>
+                                        <li>
+                                            <p>Overdue</p>
+                                        </li>
+                                        <li>
+                                            <p>Balance</p>
+                                        </li>
+                                        <li>
+                                            <p>Actions</p>
+                                        </li>
+                                    </ul>
+
+
+                                    {% for object in object_list %}
+                                      <ul class="invoice2_new_ul">
+                                          <li>
+                                              <div class="round_new_invoice2">
+                                                  <input type="checkbox" id="{{object.id}}" />
+                                                  <label for="{{object.id}}"></label>
+                                              </div>  
+                                              <p class="name_with_icon"> {{object.name}}</p>
+                                          </li>
+
+                                          <li>
+                                              <p class="">{{object.email}}</p>
+                                          </li>
+                                          <li>
+                                              <p>{{object.country.name}}</p>
+                                          </li>
+                                          <li>
+                                              <p>2</p>
+                                          </li>
+                                          <li>
+                                            <p class="paid_invoice2">+ $ 500</p>
+                                        </li>
+                                          <li>
+                                              <p class="block_img_invoice2">
+                                                  <a href="#">
+                                                      <img src="{% static 'vendor/img/invoice2_dotted2.svg' %}" alt="invoice2_dotted">
+                                                  </a>
+                                              </p>
+                                              <p class="hidden_images_invoice2">
+                                                  <a href="{% url 'customer_update' object.slug %}" data-toggle="tooltip" data-placement="top" title="Edit"><img src= "{% static 'vendor/img/pencil.svg'%}" alt="pencil">
+                                                  </a>
+                                                  </a>
+                                                  <a href="{% url 'customer_delete' object.slug %}" data-toggle="tooltip" data-placement="top" title="Delete"><img src= "{% static 'vendor/img/trash_invoice2.svg'%}" alt="trash_invoice2">
+                                                  </a>
+                                              </p>
+
+                                          </li>
+                                      </ul>
+                                    {% endfor %}  
+                                    
+                                </div>
+                            </div><!--  invoice first end -->
+                        </div> <!-- overflow x end -->
+                    </div> <!-- overflow hidden end -->
+                </div>
+
+{% endblock %}
+
+
+{% block script %}
+   <script>
+      $(".main-menu-list #customer").addClass('active active2');
+   </script>
+{% endblock%}

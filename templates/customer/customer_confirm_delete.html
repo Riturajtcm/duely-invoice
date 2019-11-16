@@ -1,0 +1,28 @@
+{% extends "full_sidebar.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block style%}
+<style>
+    #confirm_delete_box{
+        margin-top:70px;
+        margin-left:200px;
+        background: white;
+        padding: 25px;
+        border-radius: 7px;
+    }
+</style>
+{% endblock%}
+{% block content %}
+<div id="confirm_delete_box">
+    <form action="" method="post">
+        {% csrf_token %}
+         The following objects as well as their related objects will be deleted. Are you sure? 
+        <ul>
+            
+                {{ object }}
+           
+        </ul>
+        <input class="btn btn-danger" type="submit" value="Confirm deletion" />
+    </form>
+</div>    
+{% endblock%}    

@@ -1,0 +1,177 @@
+{% extends "full_sidebar.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block style%}
+
+<style>
+    .wrapper .right_form_start {
+       margin-top: 0px;
+    }
+    .wrapper .Memberrightside .right_form_start input {
+      padding-bottom: 5px;
+      font-size:15px;
+      background: none !important;
+    }
+    .wrapper .Memberrightside .right_form_start {
+    }
+    .wrapper .Memberrightside .form-group{
+      margin-bottom: 20px;
+    }
+    .wrapper .next_form_top {
+      margin-top: 0px;
+    }
+    #id_address{
+      width: 100%;
+    }
+    #id_website{
+      width: 100%;
+    }
+    #id_country{
+      width: 90%;
+    }
+    
+    .wrapper .right_form_start input:focus{
+        background: none !important;
+    }
+    .wrapper .Memberrightside .under_box {
+         margin-top: 50px;
+    }
+</style>
+{% endblock%}
+{% block content %}
+
+<div class="col-sm-9 noright col_width">
+   <div class="duely graph_side boxs Memberrightside">
+      <div class="invoices boxs add_last_invoice">
+         <div class="under_box">
+            <form method="post">
+               {% csrf_token %}
+               <div class="graph_header boxs">
+                  <p>Create New Customer</p>
+               </div>
+               <div class="inner_box boxs">
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <div class="right_form_start right_form_top boxs">
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Person/Company Name</label>
+                              {{form.name}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="right_form_start right_form_top boxs">
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Point of Contact</label>
+                              {{form.point_of_contact}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <div class="right_form_start right_form_top boxs">
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Email</label>
+                              {{form.email}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="right_form_start right_form_top boxs">
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Phone</label>
+                              {{form.phone}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--next-->
+                  <div class="row">
+                  <div class="boxs">
+                     <div class="col-xs-12">
+                        <div class="right_form_start boxs">
+                           <div class="form-group">
+                              <label for="id_address">Address</label>
+                              {{form.address}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  </div>
+
+                  <!--next-->
+                  <div class="row">
+                  <div class="boxs">
+                     <div class="col-xs-12">
+                        <div class="right_form_start boxs">
+                           <div class="form-group">
+                              <label for="id_website">Website</label>
+                              {{form.website}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  </div>
+                  <!--next-->
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <div class="right_form_start right_form_top boxs">
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">City</label>
+                              {{form.city}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="right_form_start right_form_top boxs">
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">State</label>
+                              {{form.state}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--next-->
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <div class="right_form_start right_form_top boxs">
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Zip </label>
+                              {{form.zip_code}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="right_form_start right_form_top boxs">
+                           <div class="form-group">
+                              <label for="exampleInputEmail1">Country</label>
+                              {{form.country}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xs-12">
+                     <div class="right_form_start boxs">
+                        <div class="boxs save_btn">
+                           <button class="btn" type="submit">Save</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+   <script>
+      $(".main-menu-list #customer").addClass('active active2');
+      $(document).ready(function() {
+         $('#id_country').select2();
+      });
+   </script>
+{% endblock%}

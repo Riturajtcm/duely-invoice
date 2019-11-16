@@ -1,0 +1,145 @@
+{% extends "full_sidebar.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block style %}
+<style>
+  .dashboard_statics{
+      background:white;
+      padding-left: 40px;
+      padding-right: 40px;
+      border-radius: 10px;
+      padding-top: 20px;
+  }
+  .dashboard_statics_items{
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  #over_due{
+      color: #e52956;
+      margin-top:10px
+  }
+  #open{
+      color: #2812e9;
+      margin-top:10px
+  }
+  #unsent{
+      color: #cdb514;
+      margin-top:10px
+  }
+  #income_chart	{
+	width: 800px;
+	height: 500px;
+    margin-top: 20px;
+    background: white;
+}
+</style>
+{% endblock %} 
+
+{% block content %}
+   
+<div class="col-sm-10 noright col_width" style="padding-left: 30px;">
+    <div class="row">
+        <div class="col-sm-8 col-xs-8">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12 dashboard_statics">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <h3>Hello, {{request.user.username}} !</h3>
+                        </div>
+                        <div class="col-sm-12 col-xs-12">
+                            <h5>Quick Statics</h5>
+                        </div>   
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4  dashboard_statics_items">
+                            <div class="card text-center">
+                                <p id="open">Open</p>
+                                <img src="{% static "vendor/img/open_img.svg" %}" >
+                                <p>45</p>    
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-4 dashboard_statics_items ">
+                            <div class="card text-center">
+                                <p id="over_due">Over Due</p>
+                                <img src="{% static "vendor/img/single-folded-content (2).svg" %}" >
+                                <p>40</p>    
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-4 dashboard_statics_items">
+                            <div class="card text-center">
+                                <p id="unsent">Unsent</p>
+                                <img src="{% static "vendor/img/single-folded-content (3).svg" %}" >
+                                <p>20</p>    
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+               <div id="income_chart">
+               </div>
+            </div>    
+        </div>
+        <div class="col-sm-4 col-xs-4 ">
+            <div class="card">
+               <p>Recent Activity</p>
+            </div>  
+        </div>         
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.3.0/echarts-en.common.js" integrity="sha256-1cSbMmHM/mglZwI1g59J6fA2ahwAaZayKxob0keiU1Y=" crossorigin="anonymous"></script>
+   <script>
+      $(".main-menu-list #dashboard").addClass('active active2');
+      // based ready dom, initialize echarts instance 
+		var myChart = echarts.init(document.getElementById('income_chart'));
+
+        // Specify configurations and data graphs 
+        var option = {
+            title : {
+            text: 'Your Income',
+            x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'horizental',
+        left: 'left',
+        data: ['Direct Interview','E-Mail Marketing','Advertising Alliance','Video Ads','Search Engine']
+    },
+    series : [
+        {
+            name: 'Access Sources',
+            type: 'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:335, name:'Direct Interview'},
+                {value:310, name:'E-Mail Marketing'},
+                {value:234, name:'Advertising Alliance'},
+                {value:135, name:'Video Ads'},
+                {value:1548, name:'Search Engine'}
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 0,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0)'
+                }
+            }
+        }
+    ]
+};
+
+		// Use just the specified configurations and data charts. 
+		myChart.setOption(option);
+
+   </script>
+
+{% endblock%}

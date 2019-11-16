@@ -1,0 +1,1205 @@
+{% extends "mini_sidebar.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+   
+    <div class="sidenav">
+
+            <div class="item item2 first boxs">
+                <h1>Invoice Setting</h1>
+                <h2>
+                    <span style="width:90px">Template:</span>
+
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><label>Modern (Default)</label>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i></button>    
+                        <ul class="dropdown-menu">
+                            <li><a>Modern (Default)</a></li>
+                            <li><a>Modern</a></li>
+                            <li><a>Modern</a></li>
+                        </ul>
+                    </div>   
+                </h2>
+
+            </div>
+            <div class="item border boxs">
+                <h2 class="aright"><span>Scheduled</span>
+                    <label class="switch">
+                        <input type="checkbox" class="recuriter" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </h2>
+
+                <h2 class="showRecuriter">
+                    <span>Repeat every</span>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><label>week</label>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i></button>    
+                        <ul class="dropdown-menu">
+                            <li><a>week</a></li>
+                            <li><a>2 weeks</a></li>
+                            <li><a>every month</a></li>
+                        </ul>
+                    </div>   
+                </h2>
+
+                <h2 class="aright currecny showRecuriter calendr">
+                    <span>End Date </span>  
+                    <input type="text" placeholder="Choose Date"  class="timep dateP">
+                </h2>
+
+
+
+
+            </div>
+            <div class="item reminder border boxs">
+                <h2 class="aright"><span>Reminder</span>
+                    <label class="switch">
+                        <input type="checkbox" class="reminde" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </h2>
+
+                <h2 class="showRecuriter1">
+                    <div class="dropdown" style="float: left;">
+                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"  style="text-align: left !important;"><label>On due date</label>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i></button>    
+                        <ul class="dropdown-menu">
+                            <li><a>On Due Date</a></li>
+                            <li><a>3 days before</a></li>
+                            <li><a>After 3 days</a></li>
+                            <li><a>After 5 days</a></li>
+                            <li><a>After 7 days</a></li>
+                            <li><a>After 14 days</a></li>
+                        </ul>
+                    </div>   
+                </h2> 
+                <!-- <h2 class="showRecuriter1">
+                    <span>Days</span>
+                    <div class="dropdown">
+                            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><label>5 Days</label>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i></button>    
+                            <ul class="dropdown-menu">
+                                <li><a>5 Days</a></li>
+                                <li><a>10 Days</a></li>
+                                <li><a>15 Days</a></li>
+                            </ul>
+                    </div>   
+                </h2> -->
+            </div>
+            <div class="item border reminder4 boxs">
+                <h2 class="aright5"><span>Service Date</span>
+                    <label class="switch">
+                        <input type="checkbox" class="recuriter4" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </h2>
+                <h2 class="aright5 currecny showRecuriter3 calendr">
+                    <span>Start Date </span>  
+                    <input type="text" placeholder="Choose Date"  class="timep dateP">
+                </h2>
+                <h2 class="aright5 currecny showRecuriter3 calendr">
+                    <span>End Date </span>  
+                    <input type="text" placeholder="Choose Date"  class="timep dateP">
+                </h2>
+
+
+            </div>
+            <div class="item item2 first boxs">
+                <h2 class="aright currecny">
+                    <span>Currency</span>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><label>USD</label>
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+                        <ul class="dropdown-menu">
+                            <li><a>USD</a></li>
+                            <li><a>INR</a></li>
+                            <li><a>EURO</a></li>
+                            <li><a>AED</a></li>
+                            <li><a>AFN</a></li>
+                            <li><a>ALL</a></li>
+                            <li><a>AMD</a></li>
+                            <li><a>ANG</a></li>
+                            <li><a>AOA</a></li>
+                            <li><a>ARS</a></li>
+                            <li><a>AUD</a></li>
+                            <li><a>AWG</a></li>
+                            <li><a>AZN</a></li>
+                            <li><a>BAM</a></li>
+                            <li><a>BBD</a></li>
+                            <li><a>BDT</a></li>
+                            <li><a>BGN</a></li>
+                            <li><a>BHD</a></li>
+                            <li><a>BIF</a></li>
+                            <li><a>BMD</a></li>
+                            <li><a>BND</a></li>
+                            <li><a>BOB</a></li>
+                            <li><a>BOV</a></li>
+                            <li><a>BRL</a></li>
+                            <li><a>BSD</a></li>
+                            <li><a>BTC</a></li>
+                            <li><a>BTN</a></li>
+                            <li><a>BWP</a></li>
+                            <li><a>BYR</a></li>
+                            <li><a>BZD</a></li>
+                            <li><a>CAD</a></li>
+                            <li><a>CDF</a></li>
+                            <li><a>CHE</a></li>
+                            <li><a>CHF</a></li>
+                            <li><a>CHW</a></li>
+                            <li><a>CLF</a></li>
+                            <li><a>CLP</a></li>
+                            <li><a>CNY</a></li>
+                            <li><a>COP</a></li>
+                            <li><a>COU</a></li>
+                            <li><a>CRC</a></li>
+                            <li><a>CUC</a></li>
+                            <li><a>CUP</a></li>
+                            <li><a>CVE</a></li>
+                            <li><a>CYP</a></li>
+                            <li><a>CZK</a></li>
+                            <li><a>DJF</a></li>
+                            <li><a>DKK</a></li>
+                            <li><a>DOP</a></li>
+                            <li><a>DZD</a></li>
+                            <li><a>EEK</a></li>
+                            <li><a>EGP</a></li>
+                            <li><a>ERN</a></li>
+                            <li><a>ETB</a></li>
+                            <li><a>FJD</a></li>
+                            <li><a>FKP</a></li>
+                            <li><a>GBP</a></li>
+                            <li><a>GEL</a></li>
+                            <li><a>GGP</a></li>
+                            <li><a>GHS</a></li>
+                            <li><a>GIP</a></li>
+                            <li><a>GMD</a></li>
+                            <li><a>GNF</a></li>
+                            <li><a>GTQ</a></li>
+                            <li><a>GWP</a></li>
+                            <li><a>GYD</a></li>
+                            <li><a>HKD</a></li>
+                            <li><a>HNL</a></li>
+                            <li><a>HRK</a></li>
+                            <li><a>HTG</a></li>
+                            <li><a>HUF</a></li>
+                            <li><a>IDR</a></li>
+                            <li><a>ILS</a></li>
+                            <li><a>IMP</a></li>
+                            <li><a>IQD</a></li>
+                            <li><a>IRR</a></li>
+                            <li><a>ISK</a></li>
+                            <li><a>JEP</a></li>
+                            <li><a>JMD</a></li>
+                            <li><a>JOD</a></li>
+                            <li><a>JPY</a></li>
+                            <li><a>KES</a></li>
+                            <li><a>KGS</a></li>
+                            <li><a>KHR</a></li>
+                            <li><a>KMF</a></li>
+                            <li><a>KPW</a></li>
+                            <li><a>KRW</a></li>
+                            <li><a>KWD</a></li>
+                            <li><a>KYD</a></li>
+                            <li><a>KZT</a></li>
+                            <li><a>LAK</a></li>
+                            <li><a>LBP</a></li>
+                            <li><a>LKR</a></li>
+                            <li><a>LRD</a></li>
+                            <li><a>LSL</a></li>
+                            <li><a>LTL</a></li>
+                            <li><a>LVL</a></li>
+                            <li><a>LYD</a></li>
+                            <li><a>MAD</a></li>
+                            <li><a>MDL</a></li>
+                            <li><a>MGA</a></li>
+                            <li><a>MKD</a></li>
+                            <li><a>MMK</a></li>
+                            <li><a>MNT</a></li>
+                            <li><a>MOP</a></li>
+                            <li><a>MRO</a></li>
+                            <li><a>MTL</a></li>
+                            <li><a>MUR</a></li>
+                            <li><a>MVR</a></li>
+                            <li><a>MWK</a></li>
+                            <li><a>MXN</a></li>
+                            <li><a>MXV</a></li>
+                            <li><a>MYR</a></li>
+                            <li><a>MZN</a></li>
+                            <li><a>NAD</a></li>
+                            <li><a>NGN</a></li>
+                            <li><a>NIO</a></li>
+                            <li><a>NOK</a></li>
+                            <li><a>NPR</a></li>
+                            <li><a>NZD</a></li>
+                            <li><a>OMR</a></li>
+                            <li><a>PAB</a></li>
+                            <li><a>PEN</a></li>
+                            <li><a>PGK</a></li>
+                            <li><a>PHP</a></li>
+                            <li><a>PKR</a></li>
+                            <li><a>PLN</a></li>
+                            <li><a>PYG</a></li>
+                            <li><a>QAR</a></li>
+                            <li><a>ROL</a></li>
+                            <li><a>RON</a></li>
+                            <li><a>RSD</a></li>
+                            <li><a>RUB</a></li>
+                            <li><a>RWF</a></li>
+                            <li><a>SAR</a></li>
+                            <li><a>SBD</a></li>
+                            <li><a>SCR</a></li>
+                            <li><a>SDD</a></li>
+                            <li><a>SDG</a></li>
+                            <li><a>SEK</a></li>
+                            <li><a>SGD</a></li>
+                            <li><a>SHP</a></li>
+                            <li><a>SIT</a></li>
+                            <li><a>SKK</a></li>
+                            <li><a>SLL</a></li>
+                            <li><a>SOS</a></li>
+                            <li><a>SRD</a></li>
+                            <li><a>STD</a></li>
+                            <li><a>SVC</a></li>
+                            <li><a>SYP</a></li>
+                            <li><a>SZL</a></li>
+                            <li><a>THB</a></li>
+                            <li><a>TJS</a></li>
+                            <li><a>TMT</a></li>
+                            <li><a>TND</a></li>
+                            <li><a>TOP</a></li>
+                            <li><a>TRL</a></li>
+                            <li><a>TRY</a></li>
+                            <li><a>TTD</a></li>
+                            <li><a>TVD</a></li>
+                            <li><a>TWD</a></li>
+                            <li><a>TZS</a></li>
+                            <li><a>UAH</a></li>
+                            <li><a>UGX</a></li>
+                            <li><a>UYI</a></li>
+                            <li><a>UYU</a></li>
+                            <li><a>UZS</a></li>
+                            <li><a>VEB</a></li>
+                            <li><a>VEF</a></li>
+                            <li><a>VND</a></li>
+                            <li><a>VUV</a></li>
+                            <li><a>WST</a></li>
+                            <li><a>XAF</a></li>
+                            <li><a>XCD</a></li>
+                            <li><a>XDR</a></li>
+                            <li><a>XOF</a></li>
+                            <li><a>XPF</a></li>
+                            <li><a>YER</a></li>
+                            <li><a>ZAR</a></li>
+                            <li><a>ZMK</a></li>
+                            <li><a>ZWD</a></li>
+
+                        </ul>
+                    </div>   
+                </h2>
+            </div>
+
+            <div class="item border boxs">
+                <div class="aright clickText">TAX <a><img src="img/pencil.svg" alt="pencil" class="Edittext"></a></div>
+                <label class="switch taxswitch">
+                    <input type="checkbox" class="Editbox">
+                    <span class="slider round"></span>
+                </label>
+                <h2 class="Edittext">
+                    <span class="fortaxdiscounttext clickText">
+                        <span class="Forpercenttext typeAB typesc active">20%</span>
+                    </span>
+                    <span class="fortaxdiscountbtn fortaxdiscountbtn2">
+                        <a class="Forpercentbtn clickmebtn2 " data-type="c">%</a>
+                    </span>
+                </h2>
+            </div>
+            <div class="item border boxs">
+                <h2 class="aright"><span>Discount </span>
+                    <label class="switch">
+                        <input type="checkbox" class="Discountbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <!-- 
+                    <h2 class="aright Edittext1 clickText">20% <i class="prcent">%</i></h2>-->
+                    <h2 class="Edittext1">
+                        <span class="fortaxdiscounttext clickText ">
+                            <span class="Forpercenttext typeA typesa active">20%</span><span class="forvaluetext typeA typesb">$0.00 </span>
+                        </span>
+                        <span class="fortaxdiscountbtn">
+                            <a href="javascript:void(0)" class="Forpercentbtn clickmebtn active" data-type="a">%</a><a href="javascript:void(0)" class="forvaluebtn clickmebtn" data-type="b">value</a>
+                        </span>
+                    </h2>
+                </h2>
+            </div>
+            <div class="item border boxs">
+                <h2 class="aright"><span>Client Notes</span>
+                    <label class="switch">
+                        <input type="checkbox" checked class="Clientbox">
+                        <span class="slider round"></span>
+                    </label>
+                </h2>
+            </div>
+            <div class="item border boxs">
+                <h2 class="aright">Payment Terms
+                    <label class="switch">
+                        <input type="checkbox" checked class="Termsbox">
+                        <span class="slider round"></span>
+                    </label>
+                </h2>
+            </div>
+
+            <div class="item border boxs">
+                <h2 class="aright">
+                    <img src="img/stripe.svg" class="img-responsive stripe" alt="stripe">
+                    <label class="switch">
+                        <input type="checkbox" checked class="Cardbox">
+                        <span class="slider round"></span>
+                    </label>
+
+
+                </h2>
+                <h2>Accept Debit or Credit Card Payments</h2>
+                <div class="boxs Cardtext">
+                    <p>There is a transaction fee for each card payment. The fee is 3.4% + $0.30 for each transaction.</p>
+                    <a href="" class="visa">
+                        <img src="img/visa.svg" alt="visa" class="img-responsive"></a>
+                    <a href="" class="visa"> <img src="img/masstercard.svg" alt="masstercard" class="img-responsive">
+                    </a>
+                </div>
+            </div>
+            <div class="item border boxs">
+                <h2 class="aright">   <img src="img/paypal.svg" alt="paypal" class="img-responsive payaal">
+                    <label class="switch">
+                        <input type="checkbox" checked class="Card2box">
+                        <span class="slider round"></span>
+                    </label>
+                </h2>
+                <div class="boxs Card2text">
+                    <p><i>Jhon@gmail.com</i></p>
+                    <p>Use the email linked to your Paypal account. If you don’t have an account Paypal will create new one for you when payment is received.</p>
+                </div>
+            </div>
+            <div class="item border boxs">
+                <h2 class="aright">Statement Footer
+                    <label class="switch">
+                        <input type="checkbox" class="footerSw">
+                        <span class="slider round"></span>
+                    </label>
+                </h2>
+            </div>
+
+        </div>
+
+        <div class="outer_top boxs">
+            <div class="outer boxs">
+                <div class="header boxs">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <!--<i><img src="img/eye.svg" alt="eye" class="img-responsive"></i>-->
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10">
+                                    <g fill="none" fill-rule="evenodd" stroke="#111" stroke-linecap="square" stroke-width="1.4" transform="translate(1 1)">
+                                    <path d="M0 4s2.8-4 7-4 7 4 7 4-2.8 4-7 4-7-4-7-4z"/>
+                                    <ellipse cx="7" cy="2.5" rx="3" ry="2.5"/>
+                                    </g>
+                                    </svg>View</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="active">
+                                <!--<i><img src="img/eye.svg" alt="eye" class="img-responsive"></i>-->
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13">
+                                    <g fill="none" fill-rule="evenodd" stroke="#13B0FF" stroke-width=".857">
+                                    <path d="M6.6 0v9.429"/>
+                                    <path stroke-linecap="square" d="M3.171 6L6.6 9.429 10.029 6M.6 9.857V12h12V9.857"/>
+                                    </g>
+                                    </svg>Save</span>
+                            </a>
+                        </li>
+                        <!--                    <li>
+                                                <a href="#">
+                                                    <i><img src="img/icon2.svg" alt="Eye" class="img-responsive"></i>
+                                                    <span>Edit</span>
+                                                </a>
+                                            </li>-->
+
+                        <!--                    <li>
+                                                <a href="#">
+                                                    <i><img src="img/icon4.svg" alt="Eye" class="img-responsive"></i>
+                                                    <span>Download PDF</span>
+                                                </a>
+                                            </li>-->
+                        <li>
+                            <a href="#">
+                                <!--<i><img src="img/print.svg" alt="print" class="img-responsive"></i>-->
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                    <a>
+                                        <path fill="#000" fill-rule="nonzero" d="M13.636 2.974h-.012V.396a.393.393 0 0 0-.39-.396H1.766a.393.393 0 0 0-.39.396v2.578h-.012C.612 2.974 0 3.596 0 4.36v5.881c0 .765.612 1.388 1.364 1.388h1.883v2.974c0 .218.174.396.39.396h7.921c.215 0 .39-.178.39-.396V11.63h1.688c.752 0 1.364-.623 1.364-1.388v-5.88c0-.766-.612-1.388-1.364-1.388zM2.156.793h10.69v2.18H2.155V.794zm9.013 13.414H4.026V9.582h7.143v4.625zm3.052-3.965a.59.59 0 0 1-.585.595h-1.688V9.582h.455c.215 0 .39-.178.39-.397a.393.393 0 0 0-.39-.396H2.597a.393.393 0 0 0-.39.396c0 .219.175.397.39.397h.65v1.255H1.364a.59.59 0 0 1-.585-.595v-5.88a.59.59 0 0 1 .585-.595h12.272a.59.59 0 0 1 .585.594v5.881zm-2.473-5.137c-.576 0-1.045.477-1.045 1.063s.469 1.063 1.045 1.063 1.044-.477 1.044-1.063-.468-1.063-1.044-1.063zm0 1.333a.268.268 0 0 1-.266-.27c0-.149.12-.27.266-.27.146 0 .265.121.265.27 0 .149-.119.27-.265.27zM8.693 5.105c-.576 0-1.045.477-1.045 1.063S8.117 7.23 8.693 7.23s1.044-.477 1.044-1.063-.468-1.063-1.044-1.063zm0 1.333a.268.268 0 0 1-.266-.27c0-.149.12-.27.266-.27.146 0 .265.121.265.27 0 .149-.119.27-.265.27z"/>
+                                    </a></svg>Print</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <!--<i><img src="img/restart.svg" alt="restart" class="img-responsive"></i>-->
+                                <span class="restart"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10">
+                                    <a>
+                                        <path fill="#111" fill-rule="nonzero" d="M8 5c0-.614-.511-1.111-1.143-1.111-.631 0-1.143.497-1.143 1.111s.512 1.111 1.143 1.111C7.49 6.111 8 5.614 8 5zM6.857 0c-2.84 0-5.143 2.239-5.143 5H0l2.286 2.222L4.57 5H2.857c0-2.147 1.792-3.889 4-3.889 2.209 0 4 1.742 4 3.889s-1.791 3.889-4 3.889c-.866 0-1.663-.27-2.32-.725l-.808.797A5.205 5.205 0 0 0 6.857 10C9.697 10 12 7.761 12 5S9.697 0 6.857 0z"/>
+                                    </a></svg>Restart</span>
+                            </a>
+                        </li>
+                        <li class="send">
+                            <a href="#">
+                                <!--                            <i><img src="img/send-2.svg" alt="send-2" class="img-responsive"></i>-->
+                                <span><img src="img/send-2.svg" alt="send-2" class="img-responsive">Send</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="invoices boxs">
+                    <div class="inner">
+                        <div class="structure boxs">
+                            <div class="boxs">
+                                <div class="col-xs-4 noleft">
+                                    <h1>INVOICE</h1>
+                                    <h2><span>Invoice no. </span> <input type="text" placeholder="1345693"></h2>
+                                    <h2><span>Date issued </span> <input type="text" class="timep" placeholder="30/02/2018"><i class="fa fa-calendar-o" aria-hidden="true"></i></h2>
+                                </div>
+                                <div class="col-xs-3 nopadding">
+                                    <!--                                <label class="logo">
+                                                                        Your Logo Here
+                                                                        <input type="file" >
+                                                                    </label> -->
+                                </div>
+                                <div class="col-xs-5 noright">
+                                    <div class="secondone boxs">
+                                        <div class="camera text-center">
+                                            <img id="blah" src="img/camera.svg" alt="your image" />
+                                            <label for="fileselect" class="btn"> <img src="img/plus_img.svg" alt="plus_img" class="plus_img" id="labell"></label>
+                                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" class="inputdisnone" onchange="readURL(this);" />
+                                        </div>
+                                    </div>
+                                    <!--                                    <h1 style="color: #fff;">INVOICE</h1>-->
+                                    <h2 class="fordueD fordueD2">
+                                        <span>Due Date </span> 
+                                        <div class="dropdown duedt" >
+                                            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" style="text-align: left !important;"><label>
+                                                    On Due Date</label>
+                                                <i class="fa fa-chevron-down" aria-hidden="true" style="padding-left:15px;color: #13b0ff;"></i></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a>On Due Date</a></li> 
+                                                <li><a>After 3 days</a></li>
+                                                <li><a>After 5 days</a></li>
+                                                <li><a>After 7 days</a></li>
+                                                <li><a>After 14 days</a></li>
+                                                <li><a>Choose date</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="chooseDate" hidden>
+                                            <i class="fa fa-calendar-o calender" aria-hidden="true"></i>
+                                            <input type="text" id="dp" class="timep"/>
+                                        </div>
+                                        <!-- <input type="text" class="date timep" placeholder="Jul 10,2018"><i class="fa fa-calendar-o" aria-hidden="true"></i> -->
+                                    </h2>
+                                </div>
+                                <div class="boxs bill">
+                                    <div class="col-xs-5 noleft">
+                                        <h2 class="billtext">Bill to</h2>
+                                        <h2 >
+                                            <div class="dropdown droppdt0">
+                                                <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><label>ACME CORP</label>
+                                                    <i class="fa fa-chevron-down" aria-hidden="true"></i></button>    
+                                                <ul class="dropdown-menu">
+                                                    <li><a>ACME CORP</a></li>
+                                                    <li><a>Add New</a></li>
+                                                    <li><a>James Jones</a></li>
+                                                    <li><a>Lovingly Studio</a></li>
+                                                </ul>
+                                            </div>   
+                                        </h2>
+
+                                        <!-- <h2><i>Street Address</i><input type="text" placeholder="Type here"></h2>
+                                        <h2><i>City And State</i><input type="text" placeholder="Type here"></h2> -->
+
+                                        <!-- <h2 > 
+                                            <div class="dropdown dropdownD">
+                                                <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><label>Country</label>
+                                                    <i class="fa fa-chevron-down" aria-hidden="true" style="right: 16px;"></i></button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a>U.S.A</a></li>
+                                                    <li><a>United Kingdom</a></li>
+                                                    <li><a>Canada</a></li>
+                                                    <li><a>India</a></li>
+                                                    <li><a>Afghanistan</a></li>
+                                                    <li><a>Aland Islands</a></li>
+                                                    <li><a>Albania</a></li>
+                                                    <li><a>Algeria</a></li>
+                                                    <li><a>American Samoa</a></li>
+                                                    <li><a>Andorra</a></li>
+                                                    <li><a>Angola</a></li>
+                                                    <li><a>Anguilla</a></li>
+                                                    <li><a>Antarctica</a></li>
+                                                    <li><a>Antigua and Barbuda</a></li>
+                                                    <li><a>Argentina</a></li>
+                                                    <li><a>Armenia</a></li>
+                                                    <li><a>Aruba</a></li>
+                                                    <li><a>Australia</a></li>
+                                                    <li><a>Austria</a></li>
+                                                    <li><a>Azerbaijan</a></li>
+                                                    <li><a>Bahamas</a></li>
+                                                    <li><a>Bahrain</a></li>
+                                                    <li><a>Bangladesh</a></li>
+                                                    <li><a>Barbados</a></li>
+                                                    <li><a>Belarus</a></li>
+                                                    <li><a>Belgium</a></li>
+                                                    <li><a>Belize</a></li>
+                                                    <li><a>Benin</a></li>
+                                                    <li><a>Bermuda</a></li>
+                                                    <li><a>Bhutan</a></li>
+                                                    <li><a>Bolivia</a></li>
+                                                    <li><a>Bosnia</a></li>
+                                                    <li><a>Botswana</a></li>
+                                                    <li><a>Bouvet Island</a></li>
+                                                    <li><a>Brazil</a></li>
+                                                    <li><a>British Virgin Islands</a></li>
+                                                    <li><a>Brunei</a></li>
+                                                    <li><a>Bulgaria</a></li>
+                                                    <li><a>Burkina Faso</a></li>
+                                                    <li><a>Burundi</a></li>
+                                                    <li><a>Cambodia</a></li>
+                                                    <li><a>Cameroon</a></li>
+                                                    <li><a>Canada</a></li>
+                                                    <li><a>Cape Verde</a></li>
+                                                    <li><a>Cayman Islands</a></li>
+                                                    <li><a>Central African Republic</a></li>
+                                                    <li><a>Chad</a></li>
+                                                    <li><a>Chile</a></li>
+                                                    <li><a>China</a></li>
+                                                    <li><a>Christmas Island</a></li>
+                                                    <li><a>Cocos Islands</a></li>
+                                                    <li><a>Colombia</a></li>
+                                                    <li><a>Comoros</a></li>
+                                                    <li><a>Congo</a></li>
+                                                    <li><a>Cook Islands</a></li>
+                                                    <li><a>Costa Rica</a></li>
+                                                    <li><a>Ivory Coast</a></li>
+                                                    <li><a>Croatia</a></li>
+                                                    <li><a>Cuba</a></li>
+                                                    <li><a>Cyprus</a></li>
+                                                    <li><a>Czech Republic</a></li>
+                                                    <li><a>Denmark</a></li>
+                                                    <li><a>Djibouti</a></li>
+                                                    <li><a>Dominica</a></li>
+                                                    <li><a>Dominican Republic</a></li>
+                                                    <li><a>Ecuador</a></li>
+                                                    <li><a>Egypt</a></li>
+                                                    <li><a>El Salvador</a></li>
+                                                    <li><a>Equatorial Guinea</a></li>
+                                                    <li><a>Eritrea</a></li>
+                                                    <li><a>Estonia</a></li>
+                                                    <li><a>Ethiopia</a></li>
+                                                    <li><a>Falkland Islands</a></li>
+                                                    <li><a>Faroe Islands</a></li>
+                                                    <li><a>Fiji</a></li>
+                                                    <li><a>Finland</a></li>
+                                                    <li><a>France</a></li>
+                                                    <li><a>French Guiana</a></li>
+                                                    <li><a>French Polynesia</a></li>
+                                                    <li><a>French Southern Territories</a></li>
+                                                    <li><a>Gabon</a></li>
+                                                    <li><a>Gambia</a></li>
+                                                    <li><a>Georgia</a></li>
+                                                    <li><a>Germany</a></li>
+                                                    <li><a>Ghana</a></li>
+                                                    <li><a>Gibraltar</a></li>
+                                                    <li><a>Greece</a></li>
+                                                    <li><a>Greenland</a></li>
+                                                    <li><a>Grenada</a></li>
+                                                    <li><a>Guadeloupe</a></li>
+                                                    <li><a>Guam</a></li>
+                                                    <li><a>Guatemala</a></li>
+                                                    <li><a>Guernsey</a></li>
+                                                    <li><a>Guinea-Bissau</a></li>
+                                                    <li><a>Guinea</a></li>
+                                                    <li><a>Guyana</a></li>
+                                                    <li><a>Haiti</a></li>
+                                                    <li><a>Heard Island and McDonald Islands</a></li>
+                                                    <li><a>Honduras</a></li>
+                                                    <li><a>Hong Kong</a></li>
+                                                    <li><a>Hungary</a></li>
+                                                    <li><a>Iceland</a></li>
+                                                    <li><a>India</a></li>
+                                                    <li><a>Indonesia</a></li>
+                                                    <li><a>Iran</a></li>
+                                                    <li><a>Iraq</a></li>
+                                                    <li><a>Ireland</a></li>
+                                                    <li><a>Isle of Man</a></li>
+                                                    <li><a>Israel</a></li>
+                                                    <li><a>Italy</a></li>
+                                                    <li><a>Jamaica</a></li>
+                                                    <li><a>Japan</a></li>
+                                                    <li><a>Jersey</a></li>
+                                                    <li><a>Jordan</a></li>
+                                                    <li><a>Kazakhstan</a></li>
+                                                    <li><a>Kenya</a></li>
+                                                    <li><a>Kiribati</a></li>
+                                                    <li><a>Kosova Republic</a></li>
+                                                    <li><a>Kuwait</a></li>
+                                                    <li><a>Kyrgyzstan</a></li>
+                                                    <li><a>Laos</a></li>
+                                                    <li><a>Latvia</a></li>
+                                                    <li><a>Lebanon</a></li>
+                                                    <li><a>Lesotho</a></li>
+                                                    <li><a>Liberia</a></li>
+                                                    <li><a>Libya</a></li>
+                                                    <li><a>Liechtenstein</a></li>
+                                                    <li><a>Lithuania</a></li>
+                                                    <li><a>Luxembourg</a></li>
+                                                    <li><a>Macau</a></li>
+                                                    <li><a>Macedonia</a></li>
+                                                    <li><a>Madagascar</a></li>
+                                                    <li><a>Malawi</a></li>
+                                                    <li><a>Malaysia</a></li>
+                                                    <li><a>Maldives</a></li>
+                                                    <li><a>Mali</a></li>
+                                                    <li><a>Malta</a></li>
+                                                    <li><a>Marshall Islands</a></li>
+                                                    <li><a>Martinique</a></li>
+                                                    <li><a>Mauritania</a></li>
+                                                    <li><a>Mauritius</a></li>
+                                                    <li><a>Mayotte</a></li>
+                                                    <li><a>Mexico</a></li>
+                                                    <li><a>Micronesia</a></li>
+                                                    <li><a>Moldova</a></li>
+                                                    <li><a>Monaco</a></li>
+                                                    <li><a>Mongolia</a></li>
+                                                    <li><a>Montenegro</a></li>
+                                                    <li><a>Montserrat</a></li>
+                                                    <li><a>Morocco</a></li>
+                                                    <li><a>Mozambique</a></li>
+                                                    <li><a>Myanmar</a></li>
+                                                    <li><a>Namibia</a></li>
+                                                    <li><a>Nauru</a></li>
+                                                    <li><a>Nepal</a></li>
+                                                    <li><a>Netherlands</a></li>
+                                                    <li><a>Netherlands Antilles</a></li>
+                                                    <li><a>New Caledonia</a></li>
+                                                    <li><a>New Zealand</a></li>
+                                                    <li><a>Nicaragua</a></li>
+                                                    <li><a>Niger</a></li>
+                                                    <li><a>Nigeria</a></li>
+                                                    <li><a>Niue</a></li>
+                                                    <li><a>Norfolk Island</a></li>
+                                                    <li><a>Northern Mariana Islands</a></li>
+                                                    <li><a>North Korea</a></li>
+                                                    <li><a>Norway</a></li>
+                                                    <li><a>Oman</a></li>
+                                                    <li><a>Pakistan</a></li>
+                                                    <li><a>Palau</a></li>
+                                                    <li><a>Palestine</a></li>
+                                                    <li><a>Panama</a></li>
+                                                    <li><a>Papua New Guinea</a></li>
+                                                    <li><a>Paraguay</a></li>
+                                                    <li><a>Peru</a></li>
+                                                    <li><a>Philippines</a></li>
+                                                    <li><a>Pitcairn</a></li>
+                                                    <li><a>Poland</a></li>
+                                                    <li><a>Portugal</a></li>
+                                                    <li><a>Puerto Rico</a></li>
+                                                    <li><a>Qatar</a></li>
+                                                    <li><a>Romania</a></li>
+                                                    <li><a>Russia</a></li>
+                                                    <li><a>Rwanda</a></li>
+                                                    <li><a>Saint Kitts and Nevis</a></li>
+                                                    <li><a>Saint Lucia</a></li>
+                                                    <li><a>Saint Pierre and Miquelon</a></li>
+                                                    <li><a>Saint Vincent and the Grenadines</a></li>
+                                                    <li><a>Samoa</a></li>
+                                                    <li><a>SanMarino</a></li>
+                                                    <li><a>Saudi Arabia</a></li>
+                                                    <li><a>Senegal</a></li>
+                                                    <li><a>Serbia</a></li>
+                                                    <li><a>Seychelles</a></li>
+                                                    <li><a>Sierra Leone</a></li>
+                                                    <li><a>Singapore</a></li>
+                                                    <li><a>Slovakia</a></li>
+                                                    <li><a>Slovenia</a></li>
+                                                    <li><a>Solomon Islands</a></li>
+                                                    <li><a>Somalia</a></li>
+                                                    <li><a>South Africa</a></li>
+                                                    <li><a>South Georgia and the South Sandwich Islands</a></li>
+                                                    <li><a>South Korea</a></li>
+                                                    <li><a>Spain</a></li>
+                                                    <li><a>Sri Lanka</a></li>
+                                                    <li><a>Sudan</a></li>
+                                                    <li><a>Suriname</a></li>
+                                                    <li><a>Svalbard and Jan Mayen</a></li>
+                                                    <li><a>Swaziland</a></li>
+                                                    <li><a>Sweden</a></li>
+                                                    <li><a>Switzerland</a></li>
+                                                    <li><a>Syria</a></li>
+                                                    <li><a>Taiwan</a></li>
+                                                    <li><a>Tajikistan</a></li>
+                                                    <li><a>Tanzania</a></li>
+                                                    <li><a>Thailand</a></li>
+                                                    <li><a>Togo</a></li>
+                                                    <li><a>Tokelau</a></li>
+                                                    <li><a>Tonga</a></li>
+                                                    <li><a>Trinidad and Tobago</a></li>
+                                                    <li><a>Tunisia</a></li>
+                                                    <li><a>Turkey</a></li>
+                                                    <li><a>Turkmenistan</a></li>
+                                                    <li><a>Tuvalu</a></li>
+                                                    <li><a>Uganda</a></li>
+                                                    <li><a>Ukraine</a></li>
+                                                    <li><a>United Arab Emirates</a></li>
+                                                    <li><a>United Kingdom</a></li>
+                                                    <li><a>Uruguay</a></li>
+                                                    <li><a>Uzbekistan</a></li>
+                                                    <li><a>Vanuatu</a></li>
+                                                    <li><a>Vatican City</a></li>
+                                                    <li><a>Venezuela</a></li>
+                                                    <li><a>Vietnam</a></li>
+                                                    <li><a>Virgin Islands, British</a></li>
+                                                    <li><a>Virgin Islands, U.S.</a></li>
+                                                    <li><a>Wallis and Futuna</a></li>
+                                                    <li><a>Western Sahara</a></li>
+                                                    <li><a>Yemen</a></li>
+                                                    <li><a>Zambia</a></li>
+                                                    <li><a>Zimbabwe</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </h2> -->
+                                        <!--<h2><i>Zip Code</i><input type="text" placeholder="Type here"></h2>-->
+                                    </div>
+                                    <div class="col-xs-5 col-xs-offset-2 noright">
+                                        <h2 class="billtext">Bill From</h2>
+                                        <h2 class="right"> 
+                                            <div class="billfrm">
+                                                Lovingly Studio
+
+                                                <span> 1423 Park  Ave. Ste 145</span>
+                                                New York, New York 90007
+                                                <img src="img/edit.svg" class="changetrue" alt="edit">
+                                                <span>USA</span>
+                                            </div>
+                                            <!-- <div class="dropdown">
+                                                <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><label>Country</label>
+                                                    <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a>U.S.A</a></li>
+                                                    <li><a>United Kingdom</a></li>
+                                                    <li><a>Canada</a></li>
+                                                    <li><a>India</a></li>
+                                                    <li><a>Afghanistan</a></li>
+                                                    <li><a>Aland Islands</a></li>
+                                                    <li><a>Albania</a></li>
+                                                    <li><a>Algeria</a></li>
+                                                    <li><a>American Samoa</a></li>
+                                                    <li><a>Andorra</a></li>
+                                                    <li><a>Angola</a></li>
+                                                    <li><a>Anguilla</a></li>
+                                                    <li><a>Antarctica</a></li>
+                                                    <li><a>Antigua and Barbuda</a></li>
+                                                    <li><a>Argentina</a></li>
+                                                    <li><a>Armenia</a></li>
+                                                    <li><a>Aruba</a></li>
+                                                    <li><a>Australia</a></li>
+                                                    <li><a>Austria</a></li>
+                                                    <li><a>Azerbaijan</a></li>
+                                                    <li><a>Bahamas</a></li>
+                                                    <li><a>Bahrain</a></li>
+                                                    <li><a>Bangladesh</a></li>
+                                                    <li><a>Barbados</a></li>
+                                                    <li><a>Belarus</a></li>
+                                                    <li><a>Belgium</a></li>
+                                                    <li><a>Belize</a></li>
+                                                    <li><a>Benin</a></li>
+                                                    <li><a>Bermuda</a></li>
+                                                    <li><a>Bhutan</a></li>
+                                                    <li><a>Bolivia</a></li>
+                                                    <li><a>Bosnia</a></li>
+                                                    <li><a>Botswana</a></li>
+                                                    <li><a>Bouvet Island</a></li>
+                                                    <li><a>Brazil</a></li>
+                                                    <li><a>British Virgin Islands</a></li>
+                                                    <li><a>Brunei</a></li>
+                                                    <li><a>Bulgaria</a></li>
+                                                    <li><a>Burkina Faso</a></li>
+                                                    <li><a>Burundi</a></li>
+                                                    <li><a>Cambodia</a></li>
+                                                    <li><a>Cameroon</a></li>
+                                                    <li><a>Canada</a></li>
+                                                    <li><a>Cape Verde</a></li>
+                                                    <li><a>Cayman Islands</a></li>
+                                                    <li><a>Central African Republic</a></li>
+                                                    <li><a>Chad</a></li>
+                                                    <li><a>Chile</a></li>
+                                                    <li><a>China</a></li>
+                                                    <li><a>Christmas Island</a></li>
+                                                    <li><a>Cocos Islands</a></li>
+                                                    <li><a>Colombia</a></li>
+                                                    <li><a>Comoros</a></li>
+                                                    <li><a>Congo</a></li>
+                                                    <li><a>Cook Islands</a></li>
+                                                    <li><a>Costa Rica</a></li>
+                                                    <li><a>Ivory Coast</a></li>
+                                                    <li><a>Croatia</a></li>
+                                                    <li><a>Cuba</a></li>
+                                                    <li><a>Cyprus</a></li>
+                                                    <li><a>Czech Republic</a></li>
+                                                    <li><a>Denmark</a></li>
+                                                    <li><a>Djibouti</a></li>
+                                                    <li><a>Dominica</a></li>
+                                                    <li><a>Dominican Republic</a></li>
+                                                    <li><a>Ecuador</a></li>
+                                                    <li><a>Egypt</a></li>
+                                                    <li><a>El Salvador</a></li>
+                                                    <li><a>Equatorial Guinea</a></li>
+                                                    <li><a>Eritrea</a></li>
+                                                    <li><a>Estonia</a></li>
+                                                    <li><a>Ethiopia</a></li>
+                                                    <li><a>Falkland Islands</a></li>
+                                                    <li><a>Faroe Islands</a></li>
+                                                    <li><a>Fiji</a></li>
+                                                    <li><a>Finland</a></li>
+                                                    <li><a>France</a></li>
+                                                    <li><a>French Guiana</a></li>
+                                                    <li><a>French Polynesia</a></li>
+                                                    <li><a>French Southern Territories</a></li>
+                                                    <li><a>Gabon</a></li>
+                                                    <li><a>Gambia</a></li>
+                                                    <li><a>Georgia</a></li>
+                                                    <li><a>Germany</a></li>
+                                                    <li><a>Ghana</a></li>
+                                                    <li><a>Gibraltar</a></li>
+                                                    <li><a>Greece</a></li>
+                                                    <li><a>Greenland</a></li>
+                                                    <li><a>Grenada</a></li>
+                                                    <li><a>Guadeloupe</a></li>
+                                                    <li><a>Guam</a></li>
+                                                    <li><a>Guatemala</a></li>
+                                                    <li><a>Guernsey</a></li>
+                                                    <li><a>Guinea-Bissau</a></li>
+                                                    <li><a>Guinea</a></li>
+                                                    <li><a>Guyana</a></li>
+                                                    <li><a>Haiti</a></li>
+                                                    <li><a>Heard Island and McDonald Islands</a></li>
+                                                    <li><a>Honduras</a></li>
+                                                    <li><a>Hong Kong</a></li>
+                                                    <li><a>Hungary</a></li>
+                                                    <li><a>Iceland</a></li>
+                                                    <li><a>India</a></li>
+                                                    <li><a>Indonesia</a></li>
+                                                    <li><a>Iran</a></li>
+                                                    <li><a>Iraq</a></li>
+                                                    <li><a>Ireland</a></li>
+                                                    <li><a>Isle of Man</a></li>
+                                                    <li><a>Israel</a></li>
+                                                    <li><a>Italy</a></li>
+                                                    <li><a>Jamaica</a></li>
+                                                    <li><a>Japan</a></li>
+                                                    <li><a>Jersey</a></li>
+                                                    <li><a>Jordan</a></li>
+                                                    <li><a>Kazakhstan</a></li>
+                                                    <li><a>Kenya</a></li>
+                                                    <li><a>Kiribati</a></li>
+                                                    <li><a>Kosova Republic</a></li>
+                                                    <li><a>Kuwait</a></li>
+                                                    <li><a>Kyrgyzstan</a></li>
+                                                    <li><a>Laos</a></li>
+                                                    <li><a>Latvia</a></li>
+                                                    <li><a>Lebanon</a></li>
+                                                    <li><a>Lesotho</a></li>
+                                                    <li><a>Liberia</a></li>
+                                                    <li><a>Libya</a></li>
+                                                    <li><a>Liechtenstein</a></li>
+                                                    <li><a>Lithuania</a></li>
+                                                    <li><a>Luxembourg</a></li>
+                                                    <li><a>Macau</a></li>
+                                                    <li><a>Macedonia</a></li>
+                                                    <li><a>Madagascar</a></li>
+                                                    <li><a>Malawi</a></li>
+                                                    <li><a>Malaysia</a></li>
+                                                    <li><a>Maldives</a></li>
+                                                    <li><a>Mali</a></li>
+                                                    <li><a>Malta</a></li>
+                                                    <li><a>Marshall Islands</a></li>
+                                                    <li><a>Martinique</a></li>
+                                                    <li><a>Mauritania</a></li>
+                                                    <li><a>Mauritius</a></li>
+                                                    <li><a>Mayotte</a></li>
+                                                    <li><a>Mexico</a></li>
+                                                    <li><a>Micronesia</a></li>
+                                                    <li><a>Moldova</a></li>
+                                                    <li><a>Monaco</a></li>
+                                                    <li><a>Mongolia</a></li>
+                                                    <li><a>Montenegro</a></li>
+                                                    <li><a>Montserrat</a></li>
+                                                    <li><a>Morocco</a></li>
+                                                    <li><a>Mozambique</a></li>
+                                                    <li><a>Myanmar</a></li>
+                                                    <li><a>Namibia</a></li>
+                                                    <li><a>Nauru</a></li>
+                                                    <li><a>Nepal</a></li>
+                                                    <li><a>Netherlands</a></li>
+                                                    <li><a>Netherlands Antilles</a></li>
+                                                    <li><a>New Caledonia</a></li>
+                                                    <li><a>New Zealand</a></li>
+                                                    <li><a>Nicaragua</a></li>
+                                                    <li><a>Niger</a></li>
+                                                    <li><a>Nigeria</a></li>
+                                                    <li><a>Niue</a></li>
+                                                    <li><a>Norfolk Island</a></li>
+                                                    <li><a>Northern Mariana Islands</a></li>
+                                                    <li><a>North Korea</a></li>
+                                                    <li><a>Norway</a></li>
+                                                    <li><a>Oman</a></li>
+                                                    <li><a>Pakistan</a></li>
+                                                    <li><a>Palau</a></li>
+                                                    <li><a>Palestine</a></li>
+                                                    <li><a>Panama</a></li>
+                                                    <li><a>Papua New Guinea</a></li>
+                                                    <li><a>Paraguay</a></li>
+                                                    <li><a>Peru</a></li>
+                                                    <li><a>Philippines</a></li>
+                                                    <li><a>Pitcairn</a></li>
+                                                    <li><a>Poland</a></li>
+                                                    <li><a>Portugal</a></li>
+                                                    <li><a>Puerto Rico</a></li>
+                                                    <li><a>Qatar</a></li>
+                                                    <li><a>Romania</a></li>
+                                                    <li><a>Russia</a></li>
+                                                    <li><a>Rwanda</a></li>
+                                                    <li><a>Saint Kitts and Nevis</a></li>
+                                                    <li><a>Saint Lucia</a></li>
+                                                    <li><a>Saint Pierre and Miquelon</a></li>
+                                                    <li><a>Saint Vincent and the Grenadines</a></li>
+                                                    <li><a>Samoa</a></li>
+                                                    <li><a>SanMarino</a></li>
+                                                    <li><a>Saudi Arabia</a></li>
+                                                    <li><a>Senegal</a></li>
+                                                    <li><a>Serbia</a></li>
+                                                    <li><a>Seychelles</a></li>
+                                                    <li><a>Sierra Leone</a></li>
+                                                    <li><a>Singapore</a></li>
+                                                    <li><a>Slovakia</a></li>
+                                                    <li><a>Slovenia</a></li>
+                                                    <li><a>Solomon Islands</a></li>
+                                                    <li><a>Somalia</a></li>
+                                                    <li><a>South Africa</a></li>
+                                                    <li><a>South Georgia and the South Sandwich Islands</a></li>
+                                                    <li><a>South Korea</a></li>
+                                                    <li><a>Spain</a></li>
+                                                    <li><a>Sri Lanka</a></li>
+                                                    <li><a>Sudan</a></li>
+                                                    <li><a>Suriname</a></li>
+                                                    <li><a>Svalbard and Jan Mayen</a></li>
+                                                    <li><a>Swaziland</a></li>
+                                                    <li><a>Sweden</a></li>
+                                                    <li><a>Switzerland</a></li>
+                                                    <li><a>Syria</a></li>
+                                                    <li><a>Taiwan</a></li>
+                                                    <li><a>Tajikistan</a></li>
+                                                    <li><a>Tanzania</a></li>
+                                                    <li><a>Thailand</a></li>
+                                                    <li><a>Togo</a></li>
+                                                    <li><a>Tokelau</a></li>
+                                                    <li><a>Tonga</a></li>
+                                                    <li><a>Trinidad and Tobago</a></li>
+                                                    <li><a>Tunisia</a></li>
+                                                    <li><a>Turkey</a></li>
+                                                    <li><a>Turkmenistan</a></li>
+                                                    <li><a>Tuvalu</a></li>
+                                                    <li><a>Uganda</a></li>
+                                                    <li><a>Ukraine</a></li>
+                                                    <li><a>United Arab Emirates</a></li>
+                                                    <li><a>United Kingdom</a></li>
+                                                    <li><a>Uruguay</a></li>
+                                                    <li><a>Uzbekistan</a></li>
+                                                    <li><a>Vanuatu</a></li>
+                                                    <li><a>Vatican City</a></li>
+                                                    <li><a>Venezuela</a></li>
+                                                    <li><a>Vietnam</a></li>
+                                                    <li><a>Virgin Islands, British</a></li>
+                                                    <li><a>Virgin Islands, U.S.</a></li>
+                                                    <li><a>Wallis and Futuna</a></li>
+                                                    <li><a>Western Sahara</a></li>
+                                                    <li><a>Yemen</a></li>
+                                                    <li><a>Zambia</a></li>
+                                                    <li><a>Zimbabwe</a></li>
+
+                                                </ul>
+                                            </div> -->
+
+                                        </h2>
+                                        <!--                                        <h2><i>Zip Code</i><input class="usa" type="text" placeholder="Type here"></h2>-->
+
+                                        <!--                                    <h2><input type="text" placeholder=""></h2>
+                                                                            <h2><input type="text" placeholder=""></h2>-->
+                                        <!--                                    <h2 > <select class="icon">
+                                                                                    <option value="">Country</option>
+                                                                                    <option value="india">India</option>
+                                                                                    <option value="Australia">Australia</option>
+                                                                                    <option value="Belize">Belize</option>
+                                                                                </select>
+                                                                            </h2>-->
+                                    </div>
+                                </div>
+
+                                <div class="descr boxs">
+                                    <div class="head boxs">
+                                        <div class="width width5 showRecuriter3">
+                                            <h3>SERVICE DATE</h3>
+                                        </div>
+                                        <div class="width width1">
+                                            <h3>DESCRIPTION</h3>
+                                        </div>
+                                        <div class="width width2">
+                                            <h3>QUANTITY</h3>
+                                        </div>
+                                        <div class="width width3">
+                                            <h3>RATE</h3>
+                                        </div>
+                                        <div class="width width4">
+                                            <h3>AMOUNT</h3>
+                                        </div>
+                                    </div>
+                                    <div class="inner1 boxs">
+                                        <div class="appendHere">
+                                            <div class="boxs border items">
+                                                <div class="width showRecuriter3 width5 ">
+                                                    <h2 class="aright2 currecny  calendr">
+
+                                                        <input type="text" placeholder="Choose Date"  class="timep dateP">
+                                                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                                    </h2>
+
+                                                </div>
+                                                <div class="width width1">
+                                                    <p contenteditable="true">Website redesign</p>
+                                                </div>
+                                                <div class="width width2">
+                                                    <p contenteditable="true">60</p>
+                                                </div>
+                                                <div class="width width3">
+                                                    <p contenteditable="true">15 USD</p>
+                                                </div>
+                                                <div class="width width4">
+                                                    <p contenteditable="true">900,00 USD</p>
+                                                </div>
+                                                <a href="javascript:void(0)" class="close" contenteditable="false"><img src="img/closeicon.svg" alt="closeicon"></a>
+                                            </div>
+                                            <div class="boxs border items">
+                                                <div class="width showRecuriter3 width5">
+                                                    <h2 class="aright2 currecny  calendr" contenteditable="true">
+                                                        
+                                                        <input type="text" placeholder="Choose Date"  class="timep dateP">
+                                                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                                       
+                                                    </h2>
+
+                                                </div>
+                                                <div class="width width1">
+                                                    <p contenteditable="true">Newsletter template design</p>
+                                                </div>
+                                                <div class="width width2">
+                                                    <p contenteditable="true">20</p>
+                                                </div>
+                                                <div class="width width3">
+                                                    <p contenteditable="true">12 USD</p>
+                                                </div>
+                                                <div class="width width4">
+                                                    <p contenteditable="true">900,00 USD</p>
+                                                </div>
+                                                <a href="javascript:void(0)" class="close" contenteditable="false"><img src="img/closeicon.svg" alt="closeicon"></a>
+                                            </div>
+                                        </div>
+                                        <div class="boxs items">
+                                            <div class="width width1">
+                                                <h4><a href="javascript:void(0)" class="addLine"><span><img src="img/ic_add.svg" class="img-responsive" alt="ic_add"></span> Add line item </a></h4>
+                                                <!--                                            <div class="itembox boxs">
+                                                                                                <input type="text" placeholder="Type Description">
+                                                                                                <input type="text" placeholder="Quantity/Hours">
+                                                                                                <input type="text" placeholder="Price">
+                                                                                                <button>Save item</button>
+                                                                                            </div>-->
+                                            </div>
+                                            <div class="widhtall">
+                                                <div class="boxs border items">
+                                                    <div class="width widthleft">
+                                                        <p>SUBTOTAL</p>
+                                                    </div>
+                                                    <div class="width widthright">
+                                                        <p>1140,00 USD</p>
+                                                    </div>
+                                                </div>
+                                                <div class="boxs border items Discounttext Edittext1">
+                                                    <div class="width widthleft">
+                                                        <p>Discount 5%</p>
+                                                    </div>
+                                                    <div class="width widthright">
+                                                        <p>57,00 USD</p>
+                                                    </div>
+                                                </div>
+                                                <div class="boxs border items Discounttext Edittext">
+                                                    <div class="width widthleft">
+                                                        <p>TAX 15%</p>
+                                                    </div>
+                                                    <div class="width widthright">
+                                                        <p>75,00 USD</p>
+                                                    </div>
+                                                </div>
+                                                <div class="boxs alatotal items">
+                                                    <p>TOTAL <span>1083,00 USD</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="notes boxs">
+                                        <div class="col-xs-5  noleft">
+                                            <div class="boxs Clienttext">
+                                                <h4>Notes for Client</h4>
+                                                <div class="note" contenteditable="true">
+                                                    Thank you for you confidence in my work.<br/>
+                                                    Signature
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-5 col-xs-offset-2 noright">
+                                            <div class="boxs Termstext">
+                                                <h4>Payment Terms</h4>
+                                                <div class="note" contenteditable="true">
+                                                    Terms & Conditions
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <footer id="invoiceFooter">
+                                    <div class="row">
+                                        <div class="col-md-4"><b>email:</b> ethel@ethelkennedy.com</div>
+                                        <div class="col-md-4"><b>website:</b> www.ethelkennedy.com</div>
+                                        <div class="col-md-4"><b>phone number:</b> 1(805) 000-4355</div>
+                                    </div>
+                                </footer>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+            
+            
+            
+ 
+{% endblock %}
+
+{% block script %}
+ <script src="{% static "vendor/formset/jquery.formset.js" %}"></script>
+ <script src="{% static "js/invoice_create.js" %}"></script>
+
+{% endblock %}

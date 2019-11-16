@@ -1,0 +1,90 @@
+{% load static %}
+{% load settings_value %}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    
+    <title>Duly Invoice</title>
+    <!-- Custom CSS -->
+    <link href="{% static "vendor/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendor/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendor/css/bootstrap-datetimepicker.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendor/css/style.css" %}" rel="stylesheet">
+    <link href="{% static "vendor/css/media.css" %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+
+{% block style %}
+
+{% endblock %}    
+</head>
+
+<body class="invoice_latest_body_colr_diff">
+        <a href="javascript:void(0)" class="menu">
+            <img src=" {% static "vendor/img/menuicon.svg" %}"  alt="Icon" class="img-responsive">
+            <!-- <img src="img/menu.svg" alt="Icon" class="img-responsive mobiShow"> -->
+        </a>
+        <div class="leftside boxs">
+            <ul class="top_img">
+                <li><a href=""><img src=" {% static "vendor/img/time.svg" %}"  class="img-responsive" alt="time"></a></li>
+                <li><a href=""><img src=" {% static "vendor/img/doll.svg" %}" class="img-responsive" alt="doll"></a></li>
+                <li><a class="plus" href="">+</a></li>
+            </ul>
+            <ul class="bottom_img">
+                <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <g fill="#6A2FDE" fill-rule="nonzero">
+                        <path d="M8.662 0C3.886 0 0 3.886 0 8.662c0 4.775 3.886 8.661 8.662 8.661 4.775 0 8.661-3.886 8.661-8.661C17.323 3.886 13.437 0 8.662 0zm7.551 9.203a7.517 7.517 0 0 1-.714 2.707H1.824a7.495 7.495 0 0 1-.714-2.707h1.597V8.12H1.11a7.535 7.535 0 0 1 1.83-4.414l1.128 1.128.766-.766-1.128-1.127A7.536 7.536 0 0 1 8.12 1.11v1.596h1.083V1.11a7.535 7.535 0 0 1 4.414 1.83L12.49 4.069l.765.766 1.128-1.128a7.536 7.536 0 0 1 1.83 4.414h-1.596v1.083h1.596z"/>
+                        <path d="M6.435 3.728s.994 4.834 1.24 5.38a1.083 1.083 0 0 0 1.974-.892c-.247-.545-3.214-4.488-3.214-4.488z"/>
+                        </g>
+                        </svg></a></li>
+                <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18">
+                        <g fill="none" fill-rule="evenodd" stroke="#C4C6CC" stroke-width="1.083">
+                        <path d="M10.744 1v4.33h4.331"/>
+                        <path stroke-linecap="square" d="M10.744 1H1v16.24h14.075V5.33zM4.248 12.368h7.58M4.248 9.12h7.58M4.248 5.872h3.248"/>
+                        </g>
+                        </svg></a></li>
+                <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
+                        <g fill="none" fill-rule="evenodd" stroke="#C4C6CC" stroke-linecap="square" stroke-width="1.214">
+                        <path d="M17.2 9.5V4.643H2.8A1.81 1.81 0 0 1 1 2.82v12.75C1 16.913 2.075 18 3.4 18h13.8v-4.857"/>
+                        <path d="M19 13.143h-4.2A1.81 1.81 0 0 1 13 11.32 1.81 1.81 0 0 1 14.8 9.5H19v3.643zM13.6 2.214V1H2.8C1.806 1 1 1.815 1 2.821a1.81 1.81 0 0 0 1.8 1.822"/>
+                        </g>
+                        </svg></a></li>
+                <li>
+                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17">
+                        <g fill="none" fill-rule="evenodd">
+                        <path stroke="#C4C6CC" stroke-width="1.083" d="M7.414 14.617a1.624 1.624 0 1 0 3.248 0"/>
+                        <path fill="#C4C6CC" fill-rule="nonzero" d="M7.414 14.617a1.624 1.624 0 1 0 3.248 0H7.414z"/>
+                        <path stroke="#C4C6CC" stroke-linecap="square" stroke-width="1.083" d="M13.91 9.203V5.955c0-2.664-2.209-4.872-4.872-4.872-2.664 0-4.873 2.208-4.873 4.872v3.248C4.165 11.959 2 14.617 2 14.617h14.075s-2.165-2.658-2.165-5.414z"/>
+                        </g>
+                        </svg></a>
+                </li>
+                <li>
+                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <g fill="none" fill-rule="evenodd" stroke="#C4C6CC" stroke-linecap="square" stroke-width="1.083" transform="translate(1 1.083)">
+                        <circle cx="8.12" cy="8.12" r="2.165"/>
+                        <path d="M16.24 9.744V6.496H13.86c-.109-.433-.325-.866-.542-1.299l1.678-1.678-2.273-2.274-1.678 1.678c-.38-.216-.812-.379-1.3-.541V0H6.496v2.382c-.433.108-.866.325-1.299.541L3.519 1.245 1.245 3.52l1.678 1.678c-.216.379-.379.812-.541 1.3H0v3.247h2.382c.108.433.325.867.541 1.3l-1.678 1.678 2.274 2.273 1.678-1.678c.379.217.812.38 1.3.542v2.382h3.247v-2.382c.433-.109.867-.325 1.3-.542l1.678 1.678 2.273-2.273-1.678-1.678c.217-.38.38-.812.542-1.3h2.382z"/>
+                        </g>
+                        </svg></a>
+                </li>
+            </ul>
+        </div>
+
+        {% block content %}
+
+        {% endblock %} 
+
+    
+        
+    <script src="{% static "vendor/js/jquery.js" %}"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="{% static "vendor/js/bootstrap.min.js" %}"></script>
+   <script src="{% static "vendor/js/validate.js" %}"></script>
+   <script src="{% static "vendor/js/moment.js" %}"></script>
+   <script src="{% static "vendor/js/bootstrap-datetimepicker.min.js" %}"></script>
+   <script src="{% static "vendor/js/custom.js" %}"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+    </body>
+
+
+</html>

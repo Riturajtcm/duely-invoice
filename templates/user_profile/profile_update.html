@@ -1,0 +1,184 @@
+{% extends "full_sidebar.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block style%}
+<link href="{% static "vendor/bootstrap-wysiwyg/style.css" %}" rel="stylesheet">
+ <style>
+ .profile_box{
+	background: white;
+    padding: 35px;
+    border-radius: 7px;
+	}
+ 	.profil_divider::before{
+		content:'';
+		border-left: 1.5px solid #138dee;
+		height: 200px;
+		position: absolute;
+		left: 50%;
+	 }
+	.profile_details{
+		padding-top: 40px;
+	} 
+	.wrapper .right_form_start {
+    }
+
+ </style>
+
+{% endblock %}
+
+
+{% block content %}
+{{ form.media }}
+
+<div class="col-sm-10 ">
+        <form role="form" action="{% url 'profile_update' %}"  method="post">
+                            {% csrf_token %}
+	    <div class="profile_box">
+		    <div class="row">
+			    <div class="col-sm-9 col-xs-9 noleft">
+                    <h2>Profile Update</h2>
+                </div>
+
+                
+			</div>
+			<div class="row profile_details">
+				<div class="col-sm-5 text-center">
+				    {% if request.user.profile.avtar %}
+						<div>
+					    <img src="{{request.user.profile.avtar.url}}" />
+					    </div>
+					{% else %}
+						<div>
+					    <img src="{% static "vendor/img/bit_img.svg" %}" alt="bit_img" class="bit_img img-responsive center-block">
+					    </div>
+					{% endif %}
+				    <a href="javascript:void(0)" class="clienteditlink"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+				    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="right_form_start boxs">
+                                               
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Name</label>
+                                                        {{form.comapny_name}}
+                                                    </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="right_form_start boxs">
+                                               
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Website</label>
+                                                        {{form.company_website}}
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                    </div>
+					<div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="right_form_start boxs">
+                                               
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Phone</label>
+                                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder=" ">
+                                                    </div>
+                                               
+                                            </div>
+                                        </div>
+                                
+                    </div>
+					
+				</div>
+				<div class="col-sm-1 profil_divider">
+				
+				</div>
+				<div class="col-sm-6 text-center">
+				<p>Company Details</p>
+				    {% if request.user.profile.avtar %}
+						<div>
+					    <img src="{{request.user.profile.avtar.url}}" />
+					    </div>
+					{% else %}
+						<div>
+					    <img src="{% static "vendor/img/bit_img.svg" %}" alt="bit_img" class="bit_img img-responsive center-block">
+					    </div>
+					{% endif %}
+				    <a href="javascript:void(0)" class="clienteditlink"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+				    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="right_form_start boxs">
+                                               
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Name</label>
+                                                        {{form.comapny_name}}
+                                                    </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="right_form_start boxs">
+                                               
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Website</label>
+                                                        {{form.company_website}}
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                    </div>
+					<div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="right_form_start boxs">
+                                               
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Address</label>
+                                                        {{form.comapny_address}}
+                                                    </div>
+													
+                                               
+                                            </div>
+                                        </div>
+                                
+                    </div>
+					<div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="right_form_start boxs">
+                                               
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Phone</label>
+                                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder=" ">
+                                                    </div>
+                                               
+                                            </div>
+                                        </div>
+                                
+                    </div>
+					
+				</div>
+			</div> 
+		</div>
+		<div class="right_form_start boxs">
+                        <div class="boxs save_btn">
+                           <button class="btn" type="submit">Save</button>
+                        </div>
+                     </div> 
+		</form>           
+</div>
+
+ 
+{% endblock %}
+
+{% block script %}
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.16/themes/silver/theme.min.js" integrity="sha256-AhTvgaBwyX0XLrOIvM116AWJk6OI4iLZBHgsyIa7A8c=" crossorigin="anonymous"></script>
+ <script>
+    
+</script>
+<script>
+
+$(document).ready(function() {
+   
+});
+</script>    
+{% endblock %}

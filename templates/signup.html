@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% load settings_value %} 
+      
+{% block content %}
+
+    
+
+<div class="top">
+    <div class="row">
+       <div class="col-md-6 col-sm-6 col-xs-12" style="margin:0px;padding:0px;">
+          <div class="leftop">
+             <div class="numbr1">
+                <ul>
+                   <li><a><span><i class="fa fa-edit"></i></span> DUELY</a></li>
+                </ul>
+             </div>
+          </div>
+          <!--[/left part]-->
+       </div>
+       <div class="col-md-6 col-sm-6 col-xs-12" style="margin:0px;padding:0px;">
+          <div class="rittop">
+             <div class="numbr2">
+                <ul>
+                   <li><a href=""><i class="fa fa-user-circle-o"></i> Login</a></li>
+                </ul>
+             </div>
+          </div>
+          <!--[/right part]-->
+       </div>
+    </div>
+ </div>
+ <div class="loginsec">
+    <div class="row">
+       <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="left">
+             <ul>
+                <li><a href=""><i class="fa fa-long-arrow-left"></i> Back to home</a></li>
+             </ul>
+             <h2>Sign up to Duely</h2>
+             <p>Take charges of your day<br> and get paid fast.</p>
+          </div>
+          <img src="{% static "images/right-img.png" %}" class="leftimg">         
+       </div>
+       <div class="col-md-6 col-sm-6 col-xs-12" style="margin:0px;padding:0px;background:#fcfbff">
+          <div class="contact-formbg">
+            {% if form.errors %}
+                           {% for field in form %}
+                              {% for error in field.errors %}
+                                    <li class="danger">{{ error }}</li>
+                              {% endfor %}
+                           {% endfor %}
+                           {% for error in form.non_field_errors %}
+                              <li class="danger">{{ error }}</li>
+                           {% endfor %}
+            {% endif %}
+            <form  role="form" action="{% url 'signup' %}"  method="post">
+                {% csrf_token %}
+                <!--<form type="POST" id="gsr-contact" onSubmit=window.location='' action="" >-->
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">     
+                   <a class="btn  btn-lg btn-warning" href="" id=""><img src="{% static "images/icon.png" %}" style="width:20px;">&nbsp;&nbsp;Sign up with Google</a>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                   <div class="heading"><span>Sign up using email</span></div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                    {{ form.username }}
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                    {{ form.email }}
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                    {{ form.password1 }}
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                    {{ form.password2 }}
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">     
+                   <button type="submit" class="btn  btn-lg btn-warning2" href="" id="">Sign up</button>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                   <p class="btmpara">By clicking "Sign Up" you agree with <span style="color:#8d66db;">Terms<br>and Conditions</span> of Duely</p>
+                </div>
+             </form>
+          </div>
+       </div>
+    </div>
+ </div>
+ 
+ 
+
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "full_sidebar.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block style%}
+ <style>
+ .profile_box{
+	background: white;
+    padding: 35px;
+    border-radius: 7px;
+	}
+ 	.profil_divider::before{
+		content:'';
+		border-left: 1.5px solid #138dee;
+		height: 200px;
+		position: absolute;
+		left: 50%;
+	 }
+	.profile_details{
+		padding-top: 40px;
+	} 
+
+ </style>
+
+{% endblock %}
+
+{% block content %}
+    <div class="col-sm-10 ">
+	    <div class="profile_box">
+		    <div class="row">
+			    <div class="col-sm-9 col-xs-9 noleft">
+                    <h2>Profile</h2>
+                </div>
+
+                <div class="col-sm-3 col-xs-3 noright noleft">
+                                    <div class="boxs last_link_invoice1">
+
+
+                                        <a href="{% url 'profile_update' %}" class="create_invoice_hover addteambtn">
+                                            Update
+                                        </a>
+                                    </div>
+                </div>
+			</div>
+			<div class="row profile_details">
+				<div class="col-sm-4 text-center">
+				    {% if request.user.profile.avtar %}
+						<div>
+					    <img src="{{request.user.profile.avtar.url}}" />
+					    </div>
+					{% else %}
+						<div>
+					    <img src="{% static "vendor/img/bit_img.svg" %}" alt="bit_img" class="bit_img img-responsive center-block">
+					    </div>
+					{% endif %}
+				    <h3>
+					  {{request.user.username}}
+					</h3>
+				</div>
+				<div class="col-sm-2 profil_divider">
+				
+				</div>
+				<div class="col-sm-6 text-center">
+				    <p>Company Details</p>
+					<div class="row" style="padding-top: 20px;">
+					     <div class="col-sm-6 text-left">
+						     {% if request.user.company.name %}
+							    <h6>{{request.user.company.name}}</h6>
+							  {% else %}
+								<h6>Name Not Available</h6>
+					         {% endif %}
+							 {% if request.user.company.address %}
+							    <address>
+								{{request.user.company.address}}
+								</address>
+								
+							  {% else %}
+							    <address>
+									Address Not Available
+								</address>
+					         {% endif %}	
+						    
+						 </div>
+						 <div class="col-sm-6 ">
+						     {% if request.user.company.logo %}
+								<div>
+								<img src="{{request.user.company.logo.url}}" />
+								</div>
+							{% else %}
+								<div>
+								<img src="{% static "vendor/img/bit_img.svg" %}" alt="bit_img" class=" img-responsive center-block">
+								</div>
+							{% endif %}
+						    
+						 </div>
+					</div>
+				</div>
+			</div> 
+		</div>            
+    </div>
+
+{% endblock %}
+
+ 
+
+
+{% block script %}
+<script>
+
+$(document).ready(function() {
+
+});
+</script>    
+{% endblock %}

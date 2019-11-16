@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'invoice_list' %}">Invoice Listing</a></p>
+<table class="table">
+<tr><td>title</td><td>{{ object.title }}</td></tr>
+<tr><td>slug</td><td>{{ object.slug }}</td></tr>
+<tr><td>invoive_no</td><td>{{ object.invoive_no }}</td></tr>
+<tr><td>customer</td><td>{{ object.customer }}</td></tr>
+<tr><td>invoice_date</td><td>{{ object.invoice_date }}</td></tr>
+<tr><td>due_date</td><td>{{ object.due_date }}</td></tr>
+<tr><td>tax</td><td>{{ object.tax }}</td></tr>
+<tr><td>discount</td><td>{{ object.discount }}</td></tr>
+<tr><td>notes</td><td>{{ object.notes }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Invoice</a>
+
+{% endblock %}

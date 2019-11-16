@@ -1,0 +1,71 @@
+*{margin:0;padding:0;}
+html,body,nav,header,footer,main,section,hr,hgroup,h1,h2,h3,h4,h5,h6,p,strong,span,ol,ul,li{margin:0;padding:0;}
+ol,ul,li{list-style: none;}
+a{text-decoration: none;outline: none;}
+body{overflow-x: hidden;font-size: 14px;font-weight: 400;line-height: 22px;}
+
+
+
+@font-face {
+  font-family: Gotham;
+   src: url(fonts/Gotham-Medium.otf);}   
+  font-weight: 500;
+  font-style: normal;
+font-stretch: normal;}
+
+body{
+  font-family: Gotham;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2d2a40;}
+
+
+.left p{padding-top:12px;color:#1f1f1f;font-size:15px;}
+.top{width:100%}    
+.rightbx{background:#fcfbff;width: 100%;margin:0;background:white;overflow: hidden;}  
+.leftop{float:left;width:100%;}    
+.rittop{float:right;background:#fcfbff;width:100%;}
+.numbr2{float:right;}    
+.numbr1,.numbr2{padding:20px 0px;margin:0px 90px;}
+.top a{color:#8d66db;font-weight:bold;font-size:14px;}    
+.left a{color:black;font-size:12px;}    
+.left {padding:88px 206px;margin-top:-50px;}  
+.loginsec h2{font-weight:bold;padding:10px 0px;color:black;}    
+img.leftimg{margin:-170px 0px;}
+.contact-formbg {width: 50%;height:420px;padding: 30px 14px;border-radius:5px;box-shadow: 0px 2px 7px 2px #efecec;background: #fff;margin:80px 150px;}  
+.contact-formbg .input-group{box-shadow: 0px 2px 4px 0px #dcdcdc;}    
+.btn-warning {background-color: transparent;color: #8e67dc;border: 1px solid #8e67dc;border-radius: 25px;padding: 9px 42px;margin: -2px 15px;font-size:15px;}
+.btn-warning2 {background-color:#8d66db;color:white;border: 1px solid #8e67dc;border-radius: 25px;padding: 9px 97px;margin: -2px 24px;font-size: 16px;}
+.btn-warning:hover{background:#8d66db;border:1px solid #8d66db;}   
+ .form-group {margin-bottom:15px;}    
+ .loginsec input{border-radius: 25px;padding: 22px 25px;font-size:14px;}    
+.loginsec .forget{float:right;color:#8d66db;}    
+.loginsec .btmpara{text-align:center;color:#b1adad;}
+.loginsec .heading {width: 100%;text-align: center;}
+.loginsec .heading span {display: inline-block;position: relative;font-size:12px;color:#ada8aa;padding: 0 93px;}    
+.loginsec .heading span::before {
+    content: '';position: absolute;top: 50%;right: -8px;width:90px;height: 1px;background:#ccc;transform: translate(0,-50%);}    
+.loginsec .heading span::after {content: '';position: absolute;top: 50%;left: -8px;width:90px;height: 1px;background:#ccc;transform: translate(0,-50%);} 
+
+
+
+.rightimg{margin:-65px 140px;width: 540px;}
+
+   
+    
+    
+  #page2 .contact-formbg {
+    width:50%;
+    height:500px;
+    padding: 30px 14px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 7px 2px #efecec;
+    background: #fff;
+    margin:30px 140px;}
+    
+
+#page2 .loginsec .heading span{font-size:11px;}

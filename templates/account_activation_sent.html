@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% load settings_value %}
+{% block style %}
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat-Regular';
+            padding: 0;
+            display: block;
+        }
+        .rSide{
+           overflow-y: hidden;
+        }
+    </style>
+{% endblock %} 
+      
+{% block content %}
+
+    <main>
+        </div class="row">
+            <div class="col-sm-6 lSide">
+                
+                
+                <img src="{% static "vendor/img/duely.svg" %}" class="duelyLogo"> 
+                
+                    <div class="shape-img-right">
+                        
+                        <img src="{% static "vendor/img/Rectangle 6 Copy 2.svg" %}" >
+                    </div>
+                    <div class="shape-img-bottm">
+                        <img src="{% static "vendor/img/Rectangle 6 Copy 2.svg" %}" >
+                    </div>
+                
+                <img src="{% static "vendor/img/coffee2.gif" %}" class="chrImg">
+                
+                <span class="socImg">
+                    <img src="{% static "vendor/img/icons8-google-filled-50.png" %}">
+                    <img src="{% static "vendor/img/icons8-facebook-48.png" %}">
+                    <img src="{% static "vendor/img/icons8-twitter-26.png" %}">
+                    
+                </span>
+
+
+            </div>
+
+            
+            <div class="col-sm-6 rSide">
+
+                <div class="textSide">
+                    <h1>Verify your email</h1>
+                    <h4>Hey <span class="fgBold">{{username}}</span>, to start using duely, we need to verify your email. </h4>
+                    <h4 class="mgTop mgb50">We’ve already sent out the verification link. Please check it and confirm it’s really you.</h4>
+                                    
+
+                    <div class="btArea">                    
+                        <button type="button" class="blueBt">OK, Sure!</button>
+                    </div>
+
+                    <p class="fgMed">Didn’t get e-mail? <a style="color: #13b0ff">Send it again</a></p>
+
+                    <p class="footerDiv"><span class="fgBold">Duely</span> © 2018 All rights reserved</p>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+
+{% endblock %}

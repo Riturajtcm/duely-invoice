@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div style="" class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <form style="margin-left:10px" id='invoice_form' role="form" class=" form-label-left"  action="{% url 'invoice_create' %}"  method="post">
+                                {% csrf_token %}
+                            <div style="justify-content: space-between;" class="row col-md-12">
+                               <div class="col-md-4">
+                                   <div class="">
+                                    <div class="image-upload text-center logo_upload">
+                                    <label for="file-input">
+                                    <img class="mx-auto d-block" src="{% static "images/cloud.jpg" %}" style="width:30px;margin-left:87px;">
+                                    </label>
+                                    <input id="file-input" type="file">
+                                            
+                                    <p style="color:black;text-align:center;font-size:13px;">Upload Logo from your compuer or<br>drag &amp; drope them here</p>        
+                                        </div>
+                            </div>
+                               </div>
+                               <div class=" anonymous_company_form col-md-4">
+                                    <div style="font-size: 16px;">
+                                        {{ anonymous_company_form.company_name }}
+                                    </div>
+                                    <div>
+                                        <i style="padding-right: 2px;"class="fa fa-address-book"></i>{{ anonymous_company_form.company_address }}
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-phone"></i>  {{ anonymous_company_form.company_telephone }}
+                                    </div>
+                                    <div>
+                                         <i class="fas fa-envelope"></i> {{ anonymous_company_form.company_email }}
+                                    </div>
+                               </div>
+                            </div>
+                                <div class="row">
+                                    <div class="customForm1 col-md-4">
+                                        {{ invoice_form.title|as_crispy_field }}
+                                    </div>
+                                    <div class="customForm1 col-md-4">
+                                        {{ invoice_form.invoive_no|as_crispy_field}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="customForm1 col-md-4">
+                                        {{ invoice_form.invoice_date|as_crispy_field }}
+                                    </div>
+                                    <div class="customForm1 col-md-4">
+                                        {{ invoice_form.due_date|as_crispy_field}}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    {% if user.is_authenticated %}
+                                        
+                                    {% else %}  
+                                        <fieldset>
+                                            
+                                            <h5>Cutomer</h5>
+                                            <div class="row customForm1 col-md-12">
+                                                <div class="col-md-6">
+                                                    {{ cutomer_form.name|as_crispy_field }}
+                                                </div>
+                                                <div class="col-md-6">
+                                                    {{ cutomer_form.email|as_crispy_field}}
+                                                </div>
+                                            </div>
+                                            <div class="row customForm1 col-md-12">
+                                                <div class=" col-md-6">
+                                                    {{ cutomer_form.address|as_crispy_field }}
+                                                </div>
+                                                <div class="col-md-6">
+                                                    {{ cutomer_form.point_of_contact|as_crispy_field }}
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </fieldset>
+                                   {% endif %}
+                                    
+                                </div> 
+                            <div class="row invoice_items">      
+                            <h5>Invoice Items</h5>
+                            <table class="invoice_form_table table">
+                            {{ invoice_item_form_set.management_form }}
+                                <thead>
+                                <tr>
+                                    <th>service </th>
+                                    <th>description</th>
+                                    <th>quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for form in invoice_item_form_set.forms %}
+                                    <tr  class=" invoice_item_form_set ">
+                                        <td  class="customForm1">{{form.service}} </td>   
+                                        <td  class="customForm1 ">{{form.description}} </td> 
+                                        <td  class="customForm1 ">{{form.quantity}} </td>
+                                        <td  class="customForm1 ">{{form.unit_price}} </td>  
+                                        <td  class="customForm1 price_column">{{form.price}} </td> 
+            
+                                    </tr>  
+                                {% endfor %}
+                                {% comment %} <tr>
+                                    {% for form in invoice_item_form_set.forms %}
+                                    <div  class=" invoice_item_form_set form-group row col-sm-12 col-md-12">
+                                        <div  class="form-group col-sm-12 col-md-3">{{form.service}} </div>   
+                                        <div  class="form-group col-sm-12 col-md-4">{{form.description}} </div> 
+                                        <div  class="form-group col-sm-12 col-md-2">{{form.quantity}} </div> 
+                                        <div  class="form-group col-sm-12 col-md-2">{{form.price}} </div> 
+            
+                                    </div>  
+                                {% endfor %} 
+                                </tr> {% endcomment %}
+                                </tbody>
+                            </table>
+                            </div>
+                            <div style="justify-content: flex-end;" class="row customForm1 col-md-12">
+                                
+                                <div class="col-md-2">
+                                    {{ invoice_form.tax|as_crispy_field }}
+                                </div>
+                                <div class="col-md-2">
+                                    {{ invoice_form.discount|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row customForm1 col-md-12">
+                                <div class="col-md-8">
+                                    {{ invoice_form.notes|as_crispy_field }}
+                                </div>
+                            </div>      
+                            <input id="submitform" class='form-control btn btn-primary' type="submit"  value="Send Invoice" />                    
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                
+            </div>
+        </div>
+    </div>
+    
+            
+            
+            
+ 
+{% endblock %}
+
+{% block script %}
+ <script src="{% static "assets/libs/formset/jquery.formset.js" %}"></script>
+<script>
+$('.invoice_item_form_set').formset({
+        deleteText: '-',
+        prefix:'invoice_items',
+        deleteCssClass:' btn btn-link ',
+        addCssClass:' btn btn-link add-row',
+        addText:'more',
+        formCssClass:'formset_row',
+        deleteCallback:function(){ 
+        }
+});
+$('.datepicker').datepicker();
+</script>    
+{% endblock %}
